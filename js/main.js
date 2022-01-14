@@ -59,5 +59,5 @@ for (let i = 0; i < names.length; i++) {
     </tr>`
 
     itemsQuantity = document.querySelector('#cart-content').childElementCount
-    quantity.innerHTML += itemsQuantity
+    quantity.innerHTML = itemsQuantity
 }
