@@ -54,9 +54,10 @@ for (let i = 0; i < names.length; i++) {
         var quantity = document.getElementById('quantity')
     CartContent.innerHTML += `
     <tr>
-      <td>$${name}</td>
+      <td>${name}</td>
       <td>$${price}</td>
     </tr>`
 
-        console.log(products[i])
+    itemsQuantity = document.querySelector('#cart-content').childElementCount
+    quantity.innerHTML += itemsQuantity
 }
