@@ -6,6 +6,12 @@ var products = []
 
 var display = ''
 
+
+
+
+var addBtn = document.querySelectorAll('addItem')
+var cart = document.getElementById('cart')
+var cartList = []
 for (let i = 0; i < names.length; i++) {
     const name = names[i];
     const price = prices[i]
@@ -28,23 +34,29 @@ for (let i = 0; i < names.length; i++) {
                         <p class="card-text">${description}.</p>
                     </div>
                     <div class="d-flex justify-content-between align-items-center p-4">
-                        <a id="addItem" href="#" class="btn btn-primary">Get scammed</a>
+                        <a onclick="addItem(${i})"  id="addItem" href="#" class="btn btn-primary">Get scammed</a>
                         <p class="font-weight-bold">${price}$</p>
                     </div>
                 </div>
             </div>`
 }
-var container = document.querySelector('.row')
-container.insertAdjacentHTML('afterbegin', display)
-var addBtn = document.querySelectorAll('addItem')
-var testDiv = document.getElementById(test)
+        
+    var container = document.querySelector('.row')    
+    container.insertAdjacentHTML('afterbegin', display)
 
-var cart = document.getElementById('cart')
-var cartList = []
-for (let i = 0; i < addBtn.length; i++) {
-    const clickedAddBtn = addBtn[i];
-    clickedAddBtn.addEventListener('click', (e) =>{
-        console.log('works')
-    })
+
+
+    
+    function addItem(i){
+        const name = products[i].name
+        const price = products[i].price
+        const CartContent = document.getElementById('cart-content')
+        var quantity = document.getElementById('quantity')
+    CartContent.innerHTML += `
+    <tr>
+      <td>$${name}</td>
+      <td>$${price}</td>
+    </tr>`
+
+        console.log(products[i])
 }
-

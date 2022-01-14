@@ -41,6 +41,7 @@
       <button type="button" id="cart" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Cart
 </button>
+<span id="quantity"></span>
     </div>
   </div>
 </nav>
@@ -51,11 +52,22 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <h5 class="modal-title" id="staticBackdropLabel">Cart</h5>
+          
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          BLABLABLABLABLALA
+        <div id="modal-content" class="modal-body">
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody id="cart-content">
+    
+  </tbody>
+</table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
