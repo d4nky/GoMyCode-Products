@@ -50,14 +50,22 @@ for (let i = 0; i < names.length; i++) {
     function addItem(i){
         const name = products[i].name
         const price = products[i].price
-        const CartContent = document.getElementById('cart-content')
-        var quantity = document.getElementById('quantity')
-    CartContent.innerHTML += `
-    <tr>
-      <td>${name}</td>
-      <td>$${price}</td>
-    </tr>`
+        var cart = {
+        id: i,
+        name: name,
+        price: price,
+        quantity: 1
+    }
+    cartList.push(cart)
+        var quantity = cartList.length
 
-    itemsQuantity = document.querySelector('#cart-content').childElementCount
-    quantity.innerHTML = itemsQuantity
-}
+        document.getElementById('quantity').innerHTML = quantity
+
+        const CartContent = document.getElementById('cart-content')
+        CartContent.innerHTML += `
+        <tr>
+        <td>${name}</td>
+        <td>$${price}</td>
+        <a id="remove" type="button" class="btn btn-danger">Remove</a></tr>`
+    }
+    
