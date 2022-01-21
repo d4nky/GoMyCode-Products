@@ -88,4 +88,5 @@ function remove(i) {
   const element = document.getElementById(`prod-${currentProduct.id}`);
   cartList.pop(element);
   element.remove();
+  document.getElementById("quantity").innerHTML = cartList.length;
 }
